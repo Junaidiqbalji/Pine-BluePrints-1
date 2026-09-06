@@ -1,0 +1,37 @@
+/* Custom Animations and Utilities */
+
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Hide scrollbar for cleaner look */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #fcf6f3; 
+}
+::-webkit-scrollbar-thumb {
+    background: #e5b396; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #d78d65; 
+}
+
+/* Button text transition */
+.btn-text {
+    transition: all 0.3s ease;
+}
+
+/* Status message slide in */
+#statusMessage.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

@@ -77,10 +77,10 @@ def process():
                 # Step 2: Use direct Python PDF parser for 100% complete step extraction
                 parsed_plan = parse_pdf_directly(pdf_filepath)
                 json_output = json.dumps(parsed_plan, indent=2)
-            else:
-                # Direct Python scraping (No AI) for 100% accuracy and speed
-                parsed_plan = parse_ana_white_url(url, t_id)
-                json_output = json.dumps(parsed_plan, indent=2)
+                        else:
+                # Use Gemini AI to deeply analyze the URL for all pictures and measurements
+                scraped_images, scraped_text = scrape_images_from_url(url)
+                json_output = process_with_ai(scraped_text, api_key=API_KEY, scraped_images=scraped_images)
                 
             # Extract project title for the filename
             try:
